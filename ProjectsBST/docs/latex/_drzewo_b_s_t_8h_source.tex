@@ -1,0 +1,49 @@
+\doxysection{Drzewo\+BST.\+h}
+\hypertarget{_drzewo_b_s_t_8h_source}{}\label{_drzewo_b_s_t_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DRZEWOBST\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DRZEWOBST\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wezel}{Wezel}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ wartosc;}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_wezel}{Wezel}}*\ lewy;}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_wezel}{Wezel}}*\ prawy;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_wezel}{Wezel}}(\textcolor{keywordtype}{int}\ wart)\ :\ wartosc(wart),\ lewy(\textcolor{keyword}{nullptr}),\ prawy(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_drzewo_b_s_t}{DrzewoBST}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_wezel}{Wezel}}*\ korzen;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ wstaw(\mbox{\hyperlink{class_wezel}{Wezel}}*\&\ wez,\ \textcolor{keywordtype}{int}\ wartosc);\ \textcolor{comment}{//\ Wstawia\ nowy\ węzeł}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ usun(\mbox{\hyperlink{class_wezel}{Wezel}}*\&\ wez,\ \textcolor{keywordtype}{int}\ wartosc);\ \ \textcolor{comment}{//\ Usuwa\ węzeł}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ wyczysc(\mbox{\hyperlink{class_wezel}{Wezel}}*\&\ wez);\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Oczyszcza\ drzewo}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ szukaj(\mbox{\hyperlink{class_wezel}{Wezel}}*\ wez,\ \textcolor{keywordtype}{int}\ wartosc);\ \textcolor{comment}{//\ Szuka\ węzeł\ w\ drzewie}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ preorder(\mbox{\hyperlink{class_wezel}{Wezel}}*\ wez);\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Preorder\ traversal}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ inorder(\mbox{\hyperlink{class_wezel}{Wezel}}*\ wez);\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inorder\ traversal}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ postorder(\mbox{\hyperlink{class_wezel}{Wezel}}*\ wez);\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Postorder\ traversal}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ zapiszDoPliku(\mbox{\hyperlink{class_wezel}{Wezel}}*\ wez,\ std::ofstream\&\ out);\ \textcolor{comment}{//\ Zapisuje\ drzewo\ do\ pliku}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ wczytajZPliku(\mbox{\hyperlink{class_wezel}{Wezel}}*\&\ wez,\ std::ifstream\&\ in);\ \textcolor{comment}{//\ Wczytuje\ drzewo\ z\ pliku}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_drzewo_b_s_t}{DrzewoBST}}();\ \textcolor{comment}{//\ Konstruktor}}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_drzewo_b_s_t}{\string~DrzewoBST}}();\ \textcolor{comment}{//\ Destruktor}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ dodaj(\textcolor{keywordtype}{int}\ wartosc);\ \textcolor{comment}{//\ Metoda\ dodająca\ element}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ usun(\textcolor{keywordtype}{int}\ wartosc);\ \textcolor{comment}{//\ Metoda\ usuwająca\ element}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ wyczysc();\ \textcolor{comment}{//\ Metoda\ czyszcząca\ drzewo}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ szukaj(\textcolor{keywordtype}{int}\ wartosc);\ \textcolor{comment}{//\ Metoda\ szukająca\ element}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ wyswietl(\textcolor{keywordtype}{int}\ metoda);\ \textcolor{comment}{//\ Metoda\ do\ wyświetlania\ drzewa}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ zapisz(\textcolor{keyword}{const}\ std::string\&\ nazwaPliku);\ \textcolor{comment}{//\ Zapisuje\ drzewo\ do\ pliku}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ wczytaj(\textcolor{keyword}{const}\ std::string\&\ nazwaPliku);\ \textcolor{comment}{//\ Wczytuje\ drzewo\ z\ pliku}}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
